@@ -9,9 +9,9 @@ const {storage, http} = utils;
 function getCurrentRemoteEvents() {
     let _headers = {};
     return http.get('/api/events/all', {headers: _headers})
-    .then((news) => {
-        storage.set('allEvents', news);
-        return Promise.resolve(news);
+    .then((events) => {
+        storage.set('allEvents', events);
+        return Promise.resolve(events);
     })
 }
 

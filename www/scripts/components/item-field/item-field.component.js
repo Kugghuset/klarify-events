@@ -27,7 +27,6 @@ const ItemField = Vue.extend({
   },
   methods: {
     update: function (event) {
-      console.log(this.item);
       let url = '/api/events/update/' + this.item.ID;
       Vue.http.put(url, this.item).then((response) => {
         this.connectionOk = true;

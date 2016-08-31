@@ -27,16 +27,17 @@ const EventTable = Vue.extend({
     },
     data: function() {
 
+        let events = storage.get('allEvents') || [];
         eventsService.getAllEvents().then(function () {
             let events = storage.get('allEvents');
+            var i;
+            for (i = 0; i < events.length; i++){
+                events[i]['Date'] = new Date(events[i]['Date']);
+            };
             this.events = events;
         }.bind(this))
         .catch( err => {console.log(err)});
-
-        let events = storage.get('allEvents') || [];
-
-        console.log(events);
-
+        
         return {
             events: events,
         }

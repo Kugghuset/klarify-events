@@ -67,7 +67,7 @@ export function update(id, event) {
                 }
             }
         })
-        .then((event) => resolve("Record created: " + JSON.stringify(event)))
+        .then((event) => resolve(event[0]))
         .catch(reject)
     });
 }

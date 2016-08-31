@@ -5,3 +5,11 @@ UPDATE [dbo].[DimOtherEvents]
         , [Date] = @date
         , [isDeleted] = @isdeleted
 WHERE ID = @id;
+SELECT
+    [Person]
+  , [Event]
+  , [Date]
+  , [ID]
+  , [isDeleted]
+FROM [dbo].[DimOtherEvents]
+WHERE ID = @id;

@@ -17,7 +17,7 @@ const RegisterEvent = Vue.extend({
     return {
         event: '',
         person: '',
-        date: new Date(),
+        date: null,
     }
   },
   methods: {

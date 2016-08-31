@@ -17,7 +17,7 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="event in events | filterBy false in 'isDeleted'">
+              <tr v-for="event in events | filterBy false in 'isDeleted' | orderBy 'Date'">
                   <th><item-field fieldtype="String" :content.sync="event['Event']" :item.sync="event"></item-field></th>
                   <th><item-field fieldtype="Date" :content.sync="event['Date']" :item.sync="event"></item-field></th>
                   <th><item-field fieldtype="String" :content.sync="event['Person']" :item.sync="event"></item-field></th>

@@ -8,7 +8,9 @@ import utils from '../../utils/utils';
  */
 export const getAll = (req, res) => {
     events.getAll()
-    .then((eventsItems) => res.status(200).json(eventsItems))
+    .then((eventsItems) => {
+        return res.status(200).json(eventsItems);
+    })
     .catch((err) => utils.handleError(res, err));
 }
 
